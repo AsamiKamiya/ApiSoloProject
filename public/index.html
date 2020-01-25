@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Oden API</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="api">
+      <h1>Oden API*</h1>
+      <div class="inside">
+        <textarea id="response"></textarea>
+        <img src="./oden.png" width="120px" /><br /><br />
+        <h3>/api/users/</h3>
+        <input type="text" id="userName" placeholder="userName" />
+        <button id="addUser">POST</button> <button id="listUser">GET</button>
+        <br /><br />
+
+        <h3>/api/stores/</h3>
+        <input type="text" id="storeName" placeholder="storeName" />
+        <button id="addStore">POST</button> <button id="listStore">GET</button>
+        <br /><br />
+
+        <h3>/api/odens/</h3>
+        <input type="text" id="oName" class="oden" placeholder="name" />
+        <input type="text" id="oKcal" class="oden" placeholder="kcal" />
+        <input type="text" id="oPrice" class="oden" placeholder="price" />
+        <input type="text" id="oStore_id" class="oden" placeholder="store_id" />
+        <button id="addOden">POST</button>
+        <button id="listOden">GET all</button>
+        <button id="getOdenByStore">GET by store</button> <br /><br />
+
+        <h3>/api/purchases/</h3>
+        <input type="text" id="uId" class="oden" placeholder="userId" />
+        <input type="text" id="oId" class="oden" placeholder="odenId" />
+        <input type="text" id="count" class="oden" placeholder="count" />
+        <button id="addBuy">POST</button>
+        <button id="listBuy">GET all</button>
+        <button id="getByUser">GET by user</button> <br />
+
+        <input type="text" id="bId" class="oden" placeholder="id" />
+        <button id="modify">PATCH</button>
+        <button id="delete">DELETE</button>
+        <br /><br />
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

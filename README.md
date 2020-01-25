@@ -1,80 +1,111 @@
 This was created during my time as a student at Code Chrysalis
+
 # Conveniennce stores Oden API
 
 This was created during my time as a student at Code Chrysalis.
 This API is finding conveniennce store's `Oden menu` and recording `purchase`.
 Have fun!
 
-
 ## Setting
+
 1. yarn install
+
 ```bash
 yarn install
 ```
+
 2. create DB
+
 ```bash
 yarn migrate
 ```
+
 3. insert data to table
+
 ```bash
 yarn seed
 ```
-3. open `http:localhost:3000/api` on your browser.
+
+3. open `http:localhost:3000/` on your browser.
 
 ## How to get data
+
 ### user data
-* GET
+
+- GET
+
 ```bash
 http:localhost:3000/api/users/
 ```
-* response
+
+- response
+
 ```
 {
     "id": users.id,
     "name": users.name
 }
 ```
-* POST
+
+- POST
+
 ```bash
 http:localhost:3000/api/users/
 ```
-* request
+
+- request
+
 ```
 {
     "name": users.name
 }
 ```
+
 ### store data
-* GET
+
+- GET
+
 ```bash
 http:localhost:3000/api/stores/
 ```
-* response
+
+- response
+
 ```
 {
     "id": stores.id,
     "name": stores.name
 }
 ```
-* POST
+
+- POST
+
 ```bash
 http:localhost:3000/api/stores/
 ```
-* request
+
+- request
+
 ```
 {
     "name": stores.name
 }
 ```
+
 ### oden data
-* GET
+
+- GET
+
 ```bash
 http:localhost:3000/api/odens/
 ```
+
 ```bash
 http:localhost:3000/api/odens/store/:storeid
 ```
-* response
+
+- response
+
 ```
 {
     "id": odens.id,
@@ -84,11 +115,15 @@ http:localhost:3000/api/odens/store/:storeid
     "store_name": stores.name
 }
 ```
-* POST
+
+- POST
+
 ```bash
 http:localhost:3000/api/odens/:storeid
 ```
-* request
+
+- request
+
 ```
 {
     "name": odens.name,
@@ -96,15 +131,21 @@ http:localhost:3000/api/odens/:storeid
     "kcal": odens.kcal
 }
 ```
+
 ### purchase data
-* GET
+
+- GET
+
 ```bash
 http:localhost:3000/api/purchases/
 ```
+
 ```bash
 http:localhost:3000/api/purchases/user/:userid
 ```
-* response
+
+- response
+
 ```
 {
     "id": purchases.id,
@@ -114,21 +155,29 @@ http:localhost:3000/api/purchases/user/:userid
     "purchaseDate": purchases.date
 }
 ```
-* POST
+
+- POST
+
 ```bash
 http:localhost:3000/api/purchases/user/:userid/odens/:odenid
 ```
-* request
+
+- request
+
 ```
 {
     "count" : purchases.count
 }
 ```
-* PATCH
+
+- PATCH
+
 ```bash
 http:localhost:3000/api/purchases/:purchaseid
 ```
-* request
+
+- request
+
 ```
 {
     "user_id": users.id,
@@ -136,7 +185,9 @@ http:localhost:3000/api/purchases/:purchaseid
     "count" : purchases.count
 }
 ```
-* DELETE
+
+- DELETE
+
 ```bash
 http:localhost:3000/api/purchases/:purchaseid
 ```
