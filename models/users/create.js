@@ -1,10 +1,9 @@
-const validateUsername = name =>
+const validateUsername = (name) =>
   typeof name === "string" && name.replace(" ", "").length > 2;
 
 module.exports = (knex, User) => {
-  return params => {
+  return (params) => {
     const name = params.name;
-    console.log(params);
     if (!validateUsername(name)) {
       return Promise.reject(
         new Error("name must be provided, and be at least two characters")
@@ -18,8 +17,8 @@ module.exports = (knex, User) => {
           .where({ name: name.toLowerCase() })
           .select();
       })
-      .then(users => new User(users.pop()))
-      .catch(err => {
+      .then((users) => new User(users.pop()))
+      .catch((err) => {
         if (
           err.message.match("duplicate key value") ||
           err.message.match("unique constraint failed")

@@ -1,8 +1,8 @@
-const validateUsername = name =>
+const validateUsername = (name) =>
   typeof name === "string" && name.replace(" ", "").length > 2;
 
 module.exports = (knex, User) => {
-  return params => {
+  return (params) => {
     const name = params.name;
 
     if (!validateUsername(name)) {
@@ -18,8 +18,8 @@ module.exports = (knex, User) => {
           .where({ name })
           .select();
       })
-      .then(store => new User(store.pop()))
-      .catch(err => {
+      .then((store) => new User(store.pop()))
+      .catch((err) => {
         if (
           err.message.match("duplicate key value") ||
           err.message.match("unique constraint failed")

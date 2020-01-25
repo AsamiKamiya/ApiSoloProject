@@ -11,9 +11,9 @@ module.exports = (knex, Purchase) => {
       )
       .join("users as B", "A.user_id", "=", "B.id")
       .join("odens as C", "A.oden_id", "=", "C.id")
-      .then(record => {
+      .then((record) => {
         if (record.length) {
-          return record.map(reco => new Purchase(reco));
+          return record.map((reco) => new Purchase(reco));
         }
         throw new Error(`Error finding record`);
       });

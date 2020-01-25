@@ -1,5 +1,5 @@
 module.exports = (knex, Purchase) => {
-  return params => {
+  return (params) => {
     const { user_id, oden_id, count } = params;
     return knex("purchases")
       .insert({ user_id, oden_id, count })
@@ -16,8 +16,8 @@ module.exports = (knex, Purchase) => {
           .join("users as B", "A.user_id", "=", "B.id")
           .join("odens as C", "A.oden_id", "=", "C.id");
       })
-      .then(reco => new Purchase(reco.pop()))
-      .catch(err => {
+      .then((reco) => new Purchase(reco.pop()))
+      .catch((err) => {
         return Promise.reject(err);
       });
   };

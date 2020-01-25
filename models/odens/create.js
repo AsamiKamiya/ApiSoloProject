@@ -1,8 +1,8 @@
-const validateOdenname = name =>
+const validateOdenname = (name) =>
   typeof name === "string" && name.replace(" ", "").length > 0;
 
 module.exports = (knex, Odens) => {
-  return params => {
+  return (params) => {
     const { name, kcal, price, storeId } = params;
 
     if (!validateOdenname(name)) {
@@ -16,8 +16,8 @@ module.exports = (knex, Odens) => {
           .where({ name, store_id: storeId })
           .select();
       })
-      .then(oden => new Odens(oden.pop()))
-      .catch(err => {
+      .then((oden) => new Odens(oden.pop()))
+      .catch((err) => {
         return Promise.reject(err);
       });
   };
