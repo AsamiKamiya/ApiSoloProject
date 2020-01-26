@@ -1,9 +1,9 @@
 This was created during my time as a student at Code Chrysalis
 
-# Conveniennce stores Oden API
+# Convenience stores Oden API
 
 This was created during my time as a student at Code Chrysalis.
-This API is finding conveniennce store's `Oden menu` and recording `purchase`.
+This API is finding convenience store's `Oden menu` and recording `purchase`.
 Have fun!
 
 ## Setting
